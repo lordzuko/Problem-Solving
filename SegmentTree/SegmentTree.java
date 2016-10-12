@@ -62,7 +62,6 @@ public class SegmentTree {
     private int rsq(int v, int from, int to) {
         Node n = heap[v];
 
-        //If you did a range update that contained this node, you can infer the Sum without going down the tree
         if (n.pendingVal != null && contains(n.from, n.to, from, to)) {
             return (to - from + 1) * n.pendingVal;
         }
